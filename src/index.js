@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import _ from 'lodash';
 
-const getPath = (way) => path.resolve('__fixtures__', way);
+const getPath = (way) => (way.includes('__fixtures__') ? path.resolve(process.cwd(), way) : path.resolve(process.cwd(), `__fixtures__/${way}`));
 
 export default function gendiff(file1, file2, option = 'stylish') {
   const filepath1 = getPath(file1);
@@ -37,7 +37,7 @@ function parser(obj1, obj2) {
 function formater(obj) {
   let result = '{\n';
   for (let i = 0; i < obj.length; i += 1) {
-    result += `${obj[i].status} ${obj[i].key}: ${obj[i].value}\n`;
+    result += `    ${obj[i].status} ${obj[i].key}: ${obj[i].value}\n`;
   }
   return `${result}}`;
 }
