@@ -13,8 +13,7 @@ lint:
 
 publish:
 	npm publish --dry-run
-
-
+	
 run:
 	node bin/gendiff.js
 
