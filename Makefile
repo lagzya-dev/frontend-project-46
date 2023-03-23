@@ -12,6 +12,10 @@ lint:
 	npx eslint .
 
 publish:
-	npm publish
+	npm publish --dry-run
+
+
+run:
+	node bin/gendiff.js
 
 .PHONY: test
