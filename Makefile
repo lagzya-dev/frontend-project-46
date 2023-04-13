@@ -5,7 +5,8 @@ test:
 
 test-coverage:
 	npm test -- --coverage --coverageProvider=v8
-
+gendiff:
+	bin/gendiff.js
 lint:
 	npx eslint .
 
