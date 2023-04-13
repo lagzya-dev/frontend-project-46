@@ -12,9 +12,9 @@ lint:
 publish:
 	npm publish --dry-run
 run:
-	node ./bin/gendiff.js file1.yml file2.yml 
+	./bin/gendiff.js file1.yml file2.yml 
 
 run2:
-	node ./bin/gendiff.js file1.json 'file2.json' 
+	./bin/gendiff.js file1.json 'file2.json' 
 
 .PHONY: test
