@@ -28,7 +28,7 @@ export default function stylish(tree) {
       case 'unchanged':
         return `${getSpaces(depth)}${node.key}: ${stringify(node.value, depth)}`;
       case 'tree':
-        return `${getSpaces(depth)}${node.key}: {\n${iter(node.value, depth + 1).join('\n')}\n${getSpaces(depth)}}`;
+        return `${getSpaces(depth)}${node.key}: {\n${iter(node.children, depth + 1).join('\n')}\n${getSpaces(depth)}}`;
       default:
         throw new Error(`Unknown type of node '${node.type}'.`);
     }

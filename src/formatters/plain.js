@@ -26,7 +26,7 @@ export default function plain(tree) {
       case 'changed':
         return `Property '${currentPatch}' was updated. From ${stringify(node.value)} to ${stringify(node.value2)}`;
       case 'tree':
-        return iter(node.value, currentPatch).join('\n');
+        return iter(node.children, currentPatch).join('\n');
       default:
         throw new Error(`Unknown type of node '${node.type}'.`);
     }

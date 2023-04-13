@@ -10,7 +10,7 @@ export default function buildTree(obj1, obj2) {
       return { key, value: obj2[key], status: 'add' };
     }
     if (_.isPlainObject(obj1[key]) && _.isPlainObject(obj2[key])) {
-      return { key, value: buildTree(obj1[key], obj2[key]), status: 'tree' };
+      return { key, children: buildTree(obj1[key], obj2[key]), status: 'tree' };
     }
     if (!_.isEqual(obj1[key], obj2[key])) {
       return {
