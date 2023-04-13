@@ -1,7 +1,5 @@
 install:
 	npm ci
-lint:
-	npx eslint .
 test:
 	npm test
 
@@ -13,8 +11,10 @@ lint:
 
 publish:
 	npm publish --dry-run
-	
 run:
-	node bin/gendiff.js
+	./bin/gendiff.js 'file1.yml' 'file2.yml' 
+
+run2:
+	./bin/gendiff.js 'file1.json' 'file2.json' 
 
 .PHONY: test
