@@ -9,6 +9,6 @@ export default (data, format) => {
     case 'yaml':
       return YAML.load(data);
     default:
-      throw new Error('This format is supported!');
+      throw new Error('This format isnt supported!');
   }
 };
